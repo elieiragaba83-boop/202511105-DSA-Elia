@@ -1,0 +1,103 @@
+question 1 using linear search
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter number of family members: ";
+    cin >> n;
+
+    string names[n];
+    int ages[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter name of member " << i + 1 << ": ";
+        cin >> names[i];
+
+        cout << "Enter age of " << names[i] << ": ";
+        cin >> ages[i];
+    }
+
+    string key;
+    cout << "Enter name to search: ";
+    cin >> key;
+
+    bool found = false;
+
+
+    for (int i = 0; i < n; i++) {
+        if (names[i] == key) {
+            cout << names[i] << " was found and is aged "
+                 << ages[i] << endl;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cout << "Not found" << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+question 2 
+ sorting usingle buble
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string names[] = {"Zuck","Shayd","Emely","Amjed","Esther","Manar","Anne"};
+    int n = 7;
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (names[j] > names[j + 1]) {
+                string temp = names[j];
+                names[j] = names[j + 1];
+                names[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Names in ascending order:\n";
+    for (int i = 0; i < n; i++) {
+        cout << names[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+question 3 
+
+#include <iostream>
+using namespace std;
+int main() {
+     int arr[] = {109, 99, 23, 45, 23, 2, 5, 1};
+      int n = 8;
+        for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+          if(arr[j] > arr[j + 1]) {
+
+                   int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                     arr[j + 1] = temp;
+       }
+       }
+       }
+       cout << "Ascending order: ";
+
+        for(int i = 0; i < n; i++) {
+        cout << arr[i] << " "<<endl;
+}
+    return 0;
+}
